@@ -6,6 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,12 +17,29 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Custom Hide ScrollBar class */
+.hidden-scroll::-webkit-scrollbar {
+    display: none;
+}
+  
+.hidden-scroll {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* PopUp Animation class */
+.animate-start {
+  animation-name: pop-up-fade;
+  animation-duration: 300ms;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes pop-up-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
